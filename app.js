@@ -1,5 +1,4 @@
 const InputEl = document.querySelectorAll("input");
-
 const SignupBtn = document.querySelector(".SignupBtn");
 const QuizSection1 = document.querySelector(".QuizSection1");
 const QuizSection2 = document.querySelector(".QuizSection2");
@@ -266,6 +265,7 @@ const SstQuestionBank = [
 ];
 
 let questionNumber = 0;
+let Score = 0;
 
 // EVENT LISTINERS
 SignupBtn.addEventListener("click", SignupFunction);
@@ -279,11 +279,11 @@ English.addEventListener("click", function EnglishFunction() {
   questionContainer.style.display = "flex";
 
   // DURATION
-  const displayDuration = 20000;
+  // const displayDuration = 20000;
 
-  setInterval(() => {
-    NewEngQuestion();
-  }, displayDuration);
+  // setInterval(() => {
+  //   NewEngQuestion();
+  // }, displayDuration);
   nextBtn.addEventListener("click", NewEngQuestion);
 });
 Math.addEventListener("click", function MathFunction() {
@@ -293,9 +293,9 @@ Math.addEventListener("click", function MathFunction() {
   nextBtn.style.display = "flex";
   questionContainer.style.display = "flex";
   const displayDuration = 10000;
-  setInterval(() => {
-    NewMathQuestion();
-  }, displayDuration);
+  // setInterval(() => {
+  //   NewMathQuestion();
+  // }, displayDuration);
   nextBtn.addEventListener("click", NewMathQuestion);
 });
 
@@ -306,11 +306,11 @@ Science.addEventListener("click", function ScienceFunction() {
   nextBtn.style.display = "flex";
   questionContainer.style.display = "flex";
 
-  const displayDuration = 10000;
+  // const displayDuration = 10000;
 
-  setInterval(() => {
-    NewSciQuestion();
-  }, displayDuration);
+  // setInterval(() => {
+  //   NewSciQuestion();
+  // }, displayDuration);
   nextBtn.addEventListener("click", NewSciQuestion);
 });
 
@@ -321,11 +321,11 @@ Sst.addEventListener("click", function SstFunction() {
   nextBtn.style.display = "flex";
   questionContainer.style.display = "flex";
 
-  const displayDuration = 10000;
+  // const displayDuration = 10000;
 
-  setInterval(() => {
-    NewSstQuestion();
-  }, displayDuration);
+  // setInterval(() => {
+  //   NewSstQuestion();
+  // }, displayDuration);
   nextBtn.addEventListener("click", NewSstQuestion);
 });
 
@@ -344,10 +344,20 @@ function SignupFunction() {
   alert("Logged In");
 }
 
+const ScoredEl = document.querySelector(".Scored");
 function NewEngQuestion() {
   if (questionNumber === 5) {
-    window.location = "scores.html";
-    alert("English Questions Are Over");
+    Score++;
+    alert("English Questions Are Done");
+    questionContainer.innerHTML = ` <div class="ScoredDiv">
+    <h2 class="scoredHd"> English  Overall Score</h2>
+    <p class="score">0</p>
+  </div>`;
+    nextBtn.textContent = "Next Subject";
+    nextBtn.addEventListener("click", function () {
+      SignupFunction();
+      console.log("restart clicked");
+    });
   }
 
   questionNumber++;
@@ -391,13 +401,19 @@ function NewEngQuestion() {
   });
 }
 function NewSciQuestion() {
-  // if (questionNumber === 5) {
-  //   alert("Science Questions Are Over");
-  //   nextBtn.textContent = "Restart";
-  //   nextBtn.addEventListener("click", function () {
-  //     console.log("restart clicked");
-  //   });
-  // }
+  if (questionNumber === 5) {
+    Score++;
+    alert("Science Questions Are Done");
+    questionContainer.innerHTML = ` <div class="ScoredDiv">
+    <h2 class="scoredHd"> Science  Overall Score</h2>
+    <p class="score">0</p>
+  </div>`;
+    nextBtn.textContent = "Next Subject";
+    nextBtn.addEventListener("click", function () {
+      SignupFunction();
+      console.log("restart clicked");
+    });
+  }
 
   questionNumber++;
   console.log(questionNumber);
@@ -441,13 +457,19 @@ function NewSciQuestion() {
   });
 }
 function NewMathQuestion() {
-  // if (questionNumber === 5) {
-  //   alert("Math Questions Are Over");
-  //   nextBtn.textContent = "Restart";
-  //   nextBtn.addEventListener("click", function () {
-  //     console.log("restart clicked");
-  //   });
-  // }
+  if (questionNumber === 5) {
+    Score++;
+    alert("Math Questions Are Done");
+    questionContainer.innerHTML = ` <div class="ScoredDiv">
+    <h2 class="scoredHd"> Math  Overall Score</h2>
+    <p class="score">0</p>
+  </div>`;
+    nextBtn.textContent = "Next Subject";
+    nextBtn.addEventListener("click", function () {
+      SignupFunction();
+      console.log("restart clicked");
+    });
+  }
 
   questionNumber++;
   console.log(questionNumber);
@@ -491,13 +513,19 @@ function NewMathQuestion() {
   });
 }
 function NewSstQuestion() {
-  // if (questionNumber === 5) {
-  //   alert("Sst Questions Are Over");
-  //   nextBtn.textContent = "Restart";
-  //   nextBtn.addEventListener("click", function () {
-  //     console.log("restart clicked");
-  //   });
-  // }
+  if (questionNumber === 5) {
+    Score++;
+    alert("Sst Questions Are Done");
+    questionContainer.innerHTML = ` <div class="ScoredDiv">
+    <h2 class="scoredHd"> Sst  Overall Score</h2>
+    <p class="score">0</p>
+  </div>`;
+    nextBtn.textContent = "Next Subject";
+    nextBtn.addEventListener("click", function () {
+      SignupFunction();
+      console.log("restart clicked");
+    });
+  }
 
   questionNumber++;
   console.log(questionNumber);

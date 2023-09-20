@@ -12,14 +12,16 @@
     gap: 1rem;
     flex-direction: column;
   }
-  .question {
+  .question,
+  .scoredHd {
     padding: 1rem 3rem;
     background-color: black;
     color: white;
     border-radius: 10px;
     margin-bottom: 1rem;
   }
-  li {
+  li,
+  .score {
     padding: 0.8rem 1rem;
     background-color: blanchedalmond;
     display: flex;

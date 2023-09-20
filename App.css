@@ -15,7 +15,7 @@ body {
   flex-direction: column;
   gap: 2rem;
   background: linear-gradient(45deg, rgba(0, 0, 0, 0.269), rgba(3, 71, 71, 0.599)), url(/Images/w.jpg);
-  background-repeat: repeat;
+  background-size: cover;
 }
 body .message {
   position: absolute;
@@ -43,14 +43,16 @@ body .message.show {
   gap: 1rem;
   flex-direction: column;
 }
-.Qtncontainer .question {
+.Qtncontainer .question,
+.Qtncontainer .scoredHd {
   padding: 1rem 3rem;
   background-color: black;
   color: white;
   border-radius: 10px;
   margin-bottom: 1rem;
 }
-.Qtncontainer li {
+.Qtncontainer li,
+.Qtncontainer .score {
   padding: 0.8rem 1rem;
   background-color: blanchedalmond;
   display: flex;
