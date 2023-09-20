@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+body {
+  position: relative;
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.269), rgba(3, 71, 71, 0.599)), url(/Images/w.jpg);
+  background-repeat: repeat;
+}
+body .message {
+  position: absolute;
+  right: 12%;
+  top: 53%;
+  display: none;
+  padding: 1rem 2rem;
+  background-color: rgb(216, 111, 14);
+}
+body .message.show {
+  display: inline-block;
+}
+
+.Qtncontainer {
+  display: none;
+  min-height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: -9rem;
+}
+.Qtncontainer ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.Qtncontainer .question {
+  padding: 1rem 3rem;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.Qtncontainer li {
+  padding: 0.8rem 1rem;
+  background-color: blanchedalmond;
+  display: flex;
+  gap: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nextBtn {
+  padding: 0.6rem 3rem;
+  margin-top: -10rem;
+  border-radius: 10px;
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+
+.QuizSection1 {
+  padding: 5.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 6px;
+}
+.QuizSection1 .QuizPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.QuizSection1 .QuizPage .QuizTitle {
+  padding: 1rem 6rem;
+  background-color: black;
+  color: rgb(216, 111, 14);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.QuizSection1 .QuizPage .InputsContainer ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.QuizSection1 .QuizPage .InputsContainer ul .FormLi {
+  padding: 0.8rem 1rem;
+  background-color: black;
+  color: white;
+  display: flex;
+  gap: 0.5rem;
+  border-radius: 5px;
+  font-size: x-large;
+}
+.QuizSection1 .QuizPage .InputsContainer ul .FormLi input {
+  padding: 0.4rem;
+  border: none;
+  padding-left: 1rem;
+}
+.QuizSection1 .SignupBtn {
+  cursor: pointer;
+  border: none;
+  width: 180px;
+  padding: 0.6rem;
+  border-radius: 10px;
+  color: rgb(216, 111, 14);
+  background-color: black;
+  font-size: 22px;
+}
+
+.QuizSection2 {
+  min-height: 80%;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.QuizSection2 .quizImg {
+  width: 500px;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.QuizSection2 .quizImg img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 65%;
+}
+.QuizSection2 .SubjectBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: -6rem;
+}
+.QuizSection2 .SubjectBtns button {
+  width: 150px;
+  height: 50px;
+  color: rgb(216, 111, 14);
+  border-radius: 10px;
+  border: none;
+  background-color: black;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}/*# sourceMappingURL=App.css.map */
