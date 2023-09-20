@@ -355,7 +355,6 @@ function NewEngQuestion() {
   </div>`;
     nextBtn.textContent = "Next Subject";
     nextBtn.addEventListener("click", function () {
-      SignupFunction();
       console.log("restart clicked");
     });
   }
@@ -410,7 +409,6 @@ function NewSciQuestion() {
   </div>`;
     nextBtn.textContent = "Next Subject";
     nextBtn.addEventListener("click", function () {
-      SignupFunction();
       console.log("restart clicked");
     });
   }
@@ -466,7 +464,6 @@ function NewMathQuestion() {
   </div>`;
     nextBtn.textContent = "Next Subject";
     nextBtn.addEventListener("click", function () {
-      SignupFunction();
       console.log("restart clicked");
     });
   }
@@ -522,7 +519,6 @@ function NewSstQuestion() {
   </div>`;
     nextBtn.textContent = "Next Subject";
     nextBtn.addEventListener("click", function () {
-      SignupFunction();
       console.log("restart clicked");
     });
   }
