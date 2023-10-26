@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "/partials/variables.scss";
+@import "./partials/Globals.scss";
+@import "./partials/Form.scss";
+@import "./partials/QuizSection2.scss";
+@import "./partials/QtnContainer.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Roboto:wght@300;700&display=swap");

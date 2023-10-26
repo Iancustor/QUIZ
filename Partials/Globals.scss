@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  position: relative;
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+
+  background: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.336),
+      rgba(1, 6, 58, 0.676)
+    ),
+    url(/Images/w.jpg);
+  background-size: cover;
+
+  .note {
+    position: fixed;
+    margin: auto;
+    top: 10px;
+    left: -600px;
+    background: linear-gradient(to bottom, $primary, rgba(0, 0, 0, 0.815));
+    border-radius: 5px;
+    padding: 1rem 1.7rem;
+    color: whitesmoke;
+    max-width: 60%;
+    transition: all 0.5s ease-in-out;
+  }
+  .filteredSubject {
+    position: fixed;
+    margin: auto;
+    top: 35px;
+    right: 50px;
+    background: linear-gradient(to bottom, $primary, rgba(0, 0, 0, 0.815));
+    border-radius: 5px;
+    padding: 1rem 3rem;
+    color: whitesmoke;
+    max-width: 60%;
+  }
+}

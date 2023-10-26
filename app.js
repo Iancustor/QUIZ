@@ -1,19 +1,21 @@
-const InputEl = document.querySelectorAll("input");
-const SignupBtn = document.querySelector(".SignupBtn");
-const QuizSection1 = document.querySelector(".QuizSection1");
-const QuizSection2 = document.querySelector(".QuizSection2");
+import Typed from "typed.js";
+let questionNumber = 0;
+const typed = new Typed("#welcome", {
+  strings: [
+    "<i>Your Welcome To The Quiz Arena ,</i>  Insert in your Name and Password .",
+    ". . . Enjoy the Ultimate power of The Brain ! ",
+    ". . .  sign In to continue to the Next Page !!",
+    "!! THE QUIZ ARENA !!",
+  ],
 
-// CALLING SUBJECT BTNS
-const English = document.querySelector(".EngBtn");
-const Math = document.querySelector(".MathBtn");
-const Science = document.querySelector(".SciBtn");
-const Sst = document.querySelector(".SstBtn");
+  typeSpeed: 55,
+});
 
-const questionContainer = document.querySelector(".Qtncontainer");
-const nextBtn = document.querySelector(".nextBtn");
-
-const EngQuestionBank = [
+// Questions
+const QuestionBank = [
   {
+    cat_id: 1,
+    category: "English",
     quiz: ` She is not shabby, she is not stupid.(Join Using ..... neither ...nor ...)`,
     options: {
       A: "Shes  shabby neither  nor stupid",
@@ -24,6 +26,8 @@ const EngQuestionBank = [
     answer: "C",
   },
   {
+    cat_id: 1,
+    category: "English",
     quiz: ` She is not shabby, she is not stupid.(Join Using ..... neither ...nor ...)`,
     options: {
       A: "Shes  shabby neither  nor stupid",
@@ -34,6 +38,8 @@ const EngQuestionBank = [
     answer: "C",
   },
   {
+    cat_id: 1,
+    category: "English",
     quiz: "The teacher from whom I borrowed a red pen has left (Rewrite and begin : The teachers .....) ",
     options: {
       A: "The teacher I borrowed a red pen has left",
@@ -44,6 +50,8 @@ const EngQuestionBank = [
     answer: "B",
   },
   {
+    cat_id: 1,
+    category: "English",
     quiz: `"Stop playing , boys" ordered the coach.(Begin : The Coach ....)`,
     options: {
       A: "The coach order the boys to stop playing",
@@ -54,6 +62,8 @@ const EngQuestionBank = [
     answer: "D",
   },
   {
+    cat_id: 1,
+    category: "English",
     quiz: `"Ethan asked Dube where he had put his bag"(Rewrite ending : ....?" Ethan asked.)`,
     options: {
       A: "Where have you put my bag, Ethan asked",
@@ -64,6 +74,8 @@ const EngQuestionBank = [
     answer: "A",
   },
   {
+    cat_id: 1,
+    category: "English",
     quiz: `"Kagame milked the cows." (Begin : The cows .....)`,
     options: {
       A: "The cows  Kagame milked them",
@@ -73,10 +85,9 @@ const EngQuestionBank = [
     },
     answer: "C",
   },
-];
-
-const MathQuestionBank = [
   {
+    cat_id: 2,
+    category: "Math",
     quiz: ` The cost of three pens is sh.9000. How many pens will one buy with  sh.15000 ?`,
     options: {
       A: "3 pens",
@@ -87,6 +98,8 @@ const MathQuestionBank = [
     answer: "C",
   },
   {
+    cat_id: 2,
+    category: "Math",
     quiz: ` The cost of three pens is sh.9000. How many pens will one buy with  sh.15000 ?`,
     options: {
       A: "3 pens",
@@ -97,6 +110,8 @@ const MathQuestionBank = [
     answer: "C",
   },
   {
+    cat_id: 2,
+    category: "Math",
     quiz: "Betty is 3 years older than Ritah. The sum of their age is 19. How old is Betty ? ",
     options: {
       A: "5 years ",
@@ -107,6 +122,8 @@ const MathQuestionBank = [
     answer: "B",
   },
   {
+    cat_id: 2,
+    category: "Math",
     quiz: `An Examination which took 2 and Half hours ended at 5:30pm. At What did the examination start.`,
     options: {
       A: "3:00 pm",
@@ -117,6 +134,8 @@ const MathQuestionBank = [
     answer: "A",
   },
   {
+    cat_id: 2,
+    category: "Math",
     quiz: `Given that K and 37 deg are complementally angles. Find the value of K.`,
     options: {
       A: "40 deg",
@@ -127,6 +146,8 @@ const MathQuestionBank = [
     answer: "D",
   },
   {
+    cat_id: 2,
+    category: "Math",
     quiz: `The base area of a cube is 28cm squared. Find the Volume of the cube`,
     options: {
       A: "120 cm cubed",
@@ -136,10 +157,9 @@ const MathQuestionBank = [
     },
     answer: "B",
   },
-];
-
-const SciQuestionBank = [
   {
+    cat_id: 3,
+    category: "Science",
     quiz: ` Name the force that  is reduced by synovial fluid in a joint.`,
     options: {
       A: "Gravitational force",
@@ -150,6 +170,8 @@ const SciQuestionBank = [
     answer: "B",
   },
   {
+    cat_id: 3,
+    category: "Science",
     quiz: ` Name the force that  is reduced by synovial fluid in a joint.`,
     options: {
       A: "Gravitational force",
@@ -160,6 +182,8 @@ const SciQuestionBank = [
     answer: "B",
   },
   {
+    cat_id: 3,
+    category: "Science",
     quiz: "What part of the Human skeleton is protected by the Vertebral column ? ",
     options: {
       A: "Bones",
@@ -170,6 +194,8 @@ const SciQuestionBank = [
     answer: "C",
   },
   {
+    cat_id: 3,
+    category: "Science",
     quiz: `Define the term pitch as used in sound`,
     options: {
       A: "Pitch is the highness and lawness of Eco",
@@ -180,6 +206,8 @@ const SciQuestionBank = [
     answer: "D",
   },
   {
+    cat_id: 3,
+    category: "Science",
     quiz: `How is sound produced when a girl is talking ?`,
     options: {
       A: "By enlargement of the Vocal code",
@@ -190,6 +218,8 @@ const SciQuestionBank = [
     answer: "C",
   },
   {
+    cat_id: 3,
+    category: "Science",
     quiz: `State the function of the Liver as abody organism`,
     options: {
       A: "To filter urine from the blood",
@@ -199,10 +229,9 @@ const SciQuestionBank = [
     },
     answer: "B ",
   },
-];
-
-const SstQuestionBank = [
   {
+    cat_id: 4,
+    category: "Sst",
     quiz: ` Which is the smallest continent in the World ?`,
     options: {
       A: "Austria",
@@ -213,6 +242,8 @@ const SstQuestionBank = [
     answer: "D",
   },
   {
+    cat_id: 4,
+    category: "Sst",
     quiz: ` Which is the smallest continent in the World ?`,
     options: {
       A: "Austria",
@@ -223,6 +254,8 @@ const SstQuestionBank = [
     answer: "D",
   },
   {
+    cat_id: 4,
+    category: "Sst",
     quiz: "Why does the government discourage poaching in a country ? ",
     options: {
       A: "To generate Income",
@@ -233,6 +266,8 @@ const SstQuestionBank = [
     answer: "B",
   },
   {
+    cat_id: 4,
+    category: "Sst",
     quiz: `What is population cencus ?`,
     options: {
       A: "Population cencus is the counting of people in an area",
@@ -243,6 +278,8 @@ const SstQuestionBank = [
     answer: "A",
   },
   {
+    cat_id: 4,
+    category: "Sst",
     quiz: `Give two enclave countries`,
     options: {
       A: "Dubai, Ethopia",
@@ -253,6 +290,8 @@ const SstQuestionBank = [
     answer: "D",
   },
   {
+    cat_id: 4,
+    category: "Sst",
     quiz: `Why is the Equator marked at 0 degres ?`,
     options: {
       A: "The Equator has latitudes and longitudes",
@@ -264,303 +303,147 @@ const SstQuestionBank = [
   },
 ];
 
-let questionNumber = 0;
-let Score = 0;
+// signing
+const SectionContainer = document.querySelector(".home-section");
+console.log(SectionContainer);
+const InputElms = document.querySelectorAll(".todoInput");
 
-// EVENT LISTINERS
-SignupBtn.addEventListener("click", SignupFunction);
+const QuizForm = document.getElementById("QuizForm");
+// console.log(InputElms, QuizForm);
 
-NewEngQuestion();
-English.addEventListener("click", function EnglishFunction() {
-  alert("English");
-  QuizSection2.style.display = "none";
-  NewEngQuestion();
-  nextBtn.style.display = "flex";
-  questionContainer.style.display = "flex";
+// EVENT LISTENERS
+QuizForm.addEventListener("submit", function submitForm(e) {
+  e.preventDefault();
+  const InputValues = InputElms.values;
+  // console.log(InputValues);
 
-  // DURATION
-  // const displayDuration = 20000;
-
-  // setInterval(() => {
-  //   NewEngQuestion();
-  // }, displayDuration);
-  nextBtn.addEventListener("click", NewEngQuestion);
-});
-Math.addEventListener("click", function MathFunction() {
-  alert("Math");
-  QuizSection2.style.display = "none";
-  NewMathQuestion();
-  nextBtn.style.display = "flex";
-  questionContainer.style.display = "flex";
-  const displayDuration = 10000;
-  // setInterval(() => {
-  //   NewMathQuestion();
-  // }, displayDuration);
-  nextBtn.addEventListener("click", NewMathQuestion);
-});
-
-Science.addEventListener("click", function ScienceFunction() {
-  alert("Science");
-  QuizSection2.style.display = "none";
-  NewSciQuestion();
-  nextBtn.style.display = "flex";
-  questionContainer.style.display = "flex";
-
-  // const displayDuration = 10000;
-
-  // setInterval(() => {
-  //   NewSciQuestion();
-  // }, displayDuration);
-  nextBtn.addEventListener("click", NewSciQuestion);
-});
-
-Sst.addEventListener("click", function SstFunction() {
-  alert("Social Studies");
-  QuizSection2.style.display = "none";
-  NewSstQuestion();
-  nextBtn.style.display = "flex";
-  questionContainer.style.display = "flex";
-
-  // const displayDuration = 10000;
-
-  // setInterval(() => {
-  //   NewSstQuestion();
-  // }, displayDuration);
-  nextBtn.addEventListener("click", NewSstQuestion);
-});
-
-// FUNCTIONS
-
-function displayMessage() {
-  const message = document.querySelector(".message");
-  console.log(message);
-  message.textContent = "message";
-  message.classList.add("show");
-}
-
-function SignupFunction() {
-  QuizSection1.style.display = "none";
-  QuizSection2.style.display = "flex";
-  alert("Logged In");
-}
-
-const ScoredEl = document.querySelector(".Scored");
-function NewEngQuestion() {
-  if (questionNumber === 5) {
-    Score++;
-    alert("English Questions Are Done");
-    questionContainer.innerHTML = ` <div class="ScoredDiv">
-    <h2 class="scoredHd"> English  Overall Score</h2>
-    <p class="score">0</p>
-  </div>`;
-    nextBtn.textContent = "Next Subject";
-    nextBtn.addEventListener("click", function () {
-      console.log("restart clicked");
-    });
+  if (!InputElms.values > 0) {
+    // console.log("Failled");
+  } else {
+    // console.log("logged in");
+    InputElms.values = ``;
+    displaySection2();
   }
+});
+// const storedSignIn = localStorage.getItem("cart");
 
-  questionNumber++;
-  console.log(questionNumber);
+// let signIn = storedSignIn ? storedSignIn : [];
 
-  questionContainer.innerHTML = `
-   <h2 class="question" id="question">${EngQuestionBank[questionNumber].quiz}</h2>
-    <ul class="solution">
-      <li><span class="Optnz">A.</span> <span >${EngQuestionBank[questionNumber].options.A}</span></li>
-      <li><span class="Optnz">B.</span> <span >${EngQuestionBank[questionNumber].options.B}</span></li>
-      <li><span class="Optnz">C.</span> <span >${EngQuestionBank[questionNumber].options.C}</span></li>
-      <li><span class="Optnz">D.</span> <span >${EngQuestionBank[questionNumber].options.D}</span></li>
-    </ul>
+// // Add Items to Local storage
+// localStorage.setItem("logged In", InputElms);
 
-`;
-  const optionAnswers = document.querySelectorAll("li");
+// Subject EL
 
-  // FOR EACH WITH EVENT LISTNER
-  optionAnswers.forEach((optionAnswer) => {
-    optionAnswer.addEventListener("click", function EngOption() {
-      console.log("clicked Option");
-      const optionContent = optionAnswer.textContent.split(". ")[0];
-      const currentQuestion = EngQuestionBank[questionNumber];
-      const answer = currentQuestion.answer;
-      console.log(optionContent, answer);
-      let score = 0;
-      if (optionContent == answer) {
-        optionAnswer.style.backgroundColor = "green";
-        console.log("its a correct Answer");
-        alert(`${optionContent} ,  Is a correct Answer`);
-        NewEngQuestion();
-        score++;
-        console.log(score);
-      } else {
-        console.log("its a wrong answer");
-        optionAnswer.style.backgroundColor = "red";
-        alert(`${optionContent} , Is a wrong answer`);
-        NewEngQuestion();
-      }
+function displaySection2() {
+  SectionContainer.innerHTML = ` 
+   <section class="QuizSection2">
+  <div class="SubjectBtns">
+    <button id="subjectButtons" data-id="1" class="EngBtn">ENGLISH</button>
+    <span class="text-white text-3xl">?</span>
+    <button id="subjectButtons" data-id="2" class="MathBtn">MATH</button>
+  <span class="text-white text-3xl">?</span>
+    <button id="subjectButtons" data-id="3" class="SciBtn">SCIENCE</button>
+  <span class="text-white text-3xl">?</span>
+    <button id="subjectButtons" data-id="4" class="SstBtn">SST</button>
+  </div>
+</section>
+   `;
+
+  const note = document.querySelector(".note");
+  console.log(note);
+  function showNotification(message) {
+    note.textContent = message;
+    note.style.left = "10px";
+    setTimeout(() => {
+      note.style.left = "-300px";
+    }, 3000);
+  }
+  //buttons For each
+  const buttons = document.querySelectorAll("#subjectButtons");
+  // console.log(buttons);
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", function selectSubject(e) {
+      const btnId = e.target.dataset.id;
+      // console.log(QuestionBank, btnId);
+
+      // filtering questions according to subject click
+      const filteredQuestions = QuestionBank.filter((question) => {
+        return question.cat_id == btnId;
+      });
+      //on page load
+      renderQuestion(filteredQuestions);
+      console.log(filteredQuestions);
+      showNotification(
+        `${filteredQuestions[questionNumber].category} Questions`
+      );
+      SectionContainer.style.display = "none";
+      nextBtn.style.display = "flex";
+      questionContainer.style.display = "flex";
+      nextBtn.addEventListener("click", function NextQuestion() {
+        renderQuestion(filteredQuestions);
+      });
+      console.log(nextBtn);
     });
   });
-}
-function NewSciQuestion() {
-  if (questionNumber === 5) {
-    Score++;
-    alert("Science Questions Are Done");
-    questionContainer.innerHTML = ` <div class="ScoredDiv">
-    <h2 class="scoredHd"> Science  Overall Score</h2>
-    <p class="score">0</p>
-  </div>`;
-    nextBtn.textContent = "Next Subject";
-    nextBtn.addEventListener("click", function () {
-      console.log("restart clicked");
+  const questionContainer = document.querySelector(".Qtncontainer");
+  console.log(questionContainer);
+  const nextBtn = document.querySelector(".nextBtn");
+  console.log("Nextbtn clicked");
+
+  // render questions function
+  let score = 0;
+  function renderQuestion(filteredQuestions) {
+    questionNumber++;
+    if (questionNumber == 6) {
+      showNotification(` Questions are done`);
+      // alert("questions are done");
+      questionContainer.innerHTML = `
+
+      <div class="ScoredDiv">
+           <h2 class="scoredHd">Overall Score</h2>
+           <p class="score flex align-center justify-center ">${score}</p>
+         </div>
+         `;
+      nextBtn.textContent = "Next Subject";
+      nextBtn.addEventListener("click", function nextSubject() {
+        console.log("Going to next subject");
+      });
+    }
+
+    questionContainer.innerHTML = `
+    <h3 class="filteredSubject">${filteredQuestions[questionNumber].category}</h3>
+       <h2 class="question" id="question">${filteredQuestions[questionNumber].quiz}</h2>
+        <ul class="solution">
+          <li><span class="Optnz">A.</span> <span >${filteredQuestions[questionNumber].options.A}</span></li>
+          <li><span class="Optnz">B.</span> <span >${filteredQuestions[questionNumber].options.B}</span></li>
+          <li><span class="Optnz">C.</span> <span >${filteredQuestions[questionNumber].options.C}</span></li>
+          <li><span class="Optnz">D.</span> <span >${filteredQuestions[questionNumber].options.D}</span></li>
+        </ul>
+    `;
+    const optionAnswers = document.querySelectorAll("li");
+    //  FOR EACH WITH EVENT LISTNER
+    optionAnswers.forEach((optionAnswer) => {
+      optionAnswer.addEventListener("click", function questionOption() {
+        console.log(" Option clicked");
+        const optionContent = optionAnswer.textContent.split(". ")[0];
+        const currentQuestion = QuestionBank[questionNumber];
+        const answer = currentQuestion.answer;
+        console.log(optionContent, answer);
+
+        if (optionContent == answer) {
+          showNotification(`${optionContent}  ,  Is a correct Answer `);
+          score++;
+          console.log(score);
+          // console.log("its a correct Answer");
+          renderQuestion(filteredQuestions);
+        } else {
+          console.log(score);
+          showNotification(`Wrong answer, ${answer} is the Answer `);
+          // console.log("its a wrong answer");
+          renderQuestion(filteredQuestions);
+        }
+      });
     });
   }
-
-  questionNumber++;
-  console.log(questionNumber);
-  // questionIndex = Math.floor(Math.random() * SciQuestionBank.length);
-  // console.log(questionIndex);
-  questionContainer.innerHTML = `
-    <h2 class="question" id="question">${SciQuestionBank[questionNumber].quiz}</h2>
-     <ul class="solution">
-       <li><span>A.</span> <span>${SciQuestionBank[questionNumber].options.A}</span></li>
-       <li><span>B.</span> <span>${SciQuestionBank[questionNumber].options.B}</span></li>
-       <li><span>C.</span> <span>${SciQuestionBank[questionNumber].options.C}</span></li>
-       <li><span>D.</span> <span>${SciQuestionBank[questionNumber].options.D}</span></li>
-     </ul>
-
- `;
-  const optionAnswers = document.querySelectorAll("li");
-
-  // FOR EACH WITH EVENT LISTNER
-  optionAnswers.forEach((optionAnswer) => {
-    optionAnswer.addEventListener("click", function SciOption() {
-      console.log("clicked Option");
-      const optionContent = optionAnswer.textContent.split(". ")[0];
-      const currentQuestion = SciQuestionBank[questionNumber];
-      const answer = currentQuestion.answer;
-      console.log(optionContent, answer);
-      let score = 0;
-      if (optionContent == answer) {
-        optionAnswer.style.backgroundColor = "green";
-        console.log("its a correct Answer");
-        alert(`${optionContent} ,  Is a correct Answer`);
-        NewSciQuestion();
-        score++;
-        console.log(score);
-      } else {
-        console.log("its a wrong answer");
-        optionAnswer.style.backgroundColor = "red";
-        alert(`${optionContent} , Is a wrong answer`);
-        NewSciQuestion();
-      }
-    });
-  });
-}
-function NewMathQuestion() {
-  if (questionNumber === 5) {
-    Score++;
-    alert("Math Questions Are Done");
-    questionContainer.innerHTML = ` <div class="ScoredDiv">
-    <h2 class="scoredHd"> Math  Overall Score</h2>
-    <p class="score">0</p>
-  </div>`;
-    nextBtn.textContent = "Next Subject";
-    nextBtn.addEventListener("click", function () {
-      console.log("restart clicked");
-    });
-  }
-
-  questionNumber++;
-  console.log(questionNumber);
-  // questionIndex = Math.floor(Math.random() * MathQuestionBank.length);
-  // console.log(questionIndex);
-  questionContainer.innerHTML = `
-    <h2 class="question" id="question">${MathQuestionBank[questionNumber].quiz}</h2>
-     <ul class="solution">
-       <li><span>A.</span> <span>${MathQuestionBank[questionNumber].options.A}</span></li>
-       <li><span>B.</span> <span>${MathQuestionBank[questionNumber].options.B}</span></li>
-       <li><span>C.</span> <span>${MathQuestionBank[questionNumber].options.C}</span></li>
-       <li><span>D.</span> <span>${MathQuestionBank[questionNumber].options.D}</span></li>
-     </ul>
-
- `;
-  const optionAnswers = document.querySelectorAll("li");
-
-  // FOR EACH WITH EVENT LISTNER
-  optionAnswers.forEach((optionAnswer) => {
-    optionAnswer.addEventListener("click", function MathOption() {
-      console.log("clicked Option");
-      const optionContent = optionAnswer.textContent.split(". ")[0];
-      const currentQuestion = MathQuestionBank[questionNumber];
-      const answer = currentQuestion.answer;
-      console.log(optionContent, answer);
-      let score = 0;
-      if (optionContent == answer) {
-        optionAnswer.style.backgroundColor = "green";
-        console.log("its a correct Answer");
-        alert(`${optionContent} ,  Is a correct Answer`);
-        NewMathQuestion();
-        score++;
-        console.log(score);
-      } else {
-        console.log("its a wrong answer");
-        optionAnswer.style.backgroundColor = "red";
-        alert(`${optionContent} , Is a wrong answer`);
-        NewMathQuestion();
-      }
-    });
-  });
-}
-function NewSstQuestion() {
-  if (questionNumber === 5) {
-    Score++;
-    alert("Sst Questions Are Done");
-    questionContainer.innerHTML = ` <div class="ScoredDiv">
-    <h2 class="scoredHd"> Sst  Overall Score</h2>
-    <p class="score">0</p>
-  </div>`;
-    nextBtn.textContent = "Next Subject";
-    nextBtn.addEventListener("click", function () {
-      console.log("restart clicked");
-    });
-  }
-
-  questionNumber++;
-  console.log(questionNumber);
-  // questionIndex = Math.floor(Math.random() * SstQuestionBank.length);
-  // console.log(questionIndex);
-  questionContainer.innerHTML = `
-    <h2 class="question" id="question">${SstQuestionBank[questionNumber].quiz}</h2>
-     <ul class="solution">
-       <li><span>A.</span> <span>${SstQuestionBank[questionNumber].options.A}</span></li>
-       <li><span>B.</span> <span>${SstQuestionBank[questionNumber].options.B}</span></li>
-       <li><span>C.</span> <span>${SstQuestionBank[questionNumber].options.C}</span></li>
-       <li><span>D.</span> <span>${SstQuestionBank[questionNumber].options.D}</span></li>
-     </ul>
-
- `;
-  const optionAnswers = document.querySelectorAll("li");
-
-  // FOR EACH WITH EVENT LISTNER
-  optionAnswers.forEach((optionAnswer) => {
-    optionAnswer.addEventListener("click", function SstOption() {
-      console.log("clicked Option");
-      const optionContent = optionAnswer.textContent.split(". ")[0];
-      const currentQuestion = SstQuestionBank[questionNumber];
-      const answer = currentQuestion.answer;
-      console.log(optionContent, answer);
-      let score = 0;
-      if (optionContent == answer) {
-        optionAnswer.style.backgroundColor = "green";
-        console.log("its a correct Answer");
-        alert(`${optionContent} ,  Is a correct Answer`);
-        NewSstQuestion();
-        score++;
-        console.log(score);
-      } else {
-        console.log("its a wrong answer");
-        optionAnswer.style.backgroundColor = "red";
-        alert(`${optionContent} , Is a wrong answer`);
-        NewMathQuestion();
-      }
-    });
-  });
 }

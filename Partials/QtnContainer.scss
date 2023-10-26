@@ -1,0 +1,44 @@
+.Qtncontainer {
+  display: none;
+  min-height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: -9rem;
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
+  .question,
+  .scoredHd {
+    padding: 1rem 3rem;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  li,
+  .score {
+    padding: 0.8rem 1rem;
+    background: linear-gradient(to bottom, $primary, rgba(0, 0, 0, 0.815));
+    color: white;
+    display: flex;
+    gap: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+.nextBtn {
+  padding: 0.6rem 3rem;
+  margin-top: -10rem;
+  border-radius: 10px;
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
